@@ -43,6 +43,7 @@ Logged in as guest and received a valid JWT — but its role is guest, not admin
 
 ### Step 2 — Fetching the RSA public key
 Fetched the server's RSA public key — this is meant to verify RS256 signatures, but will be reused as an HS256 secret in the next step.
+
 <img width="566" height="177" alt="image" src="https://github.com/user-attachments/assets/82a112e2-f88e-4133-a41e-7e94e8fda65a" />
 
 The public key was saved locally to `pubkey.pemm` for use in the forging script.
