@@ -44,11 +44,11 @@ Logged in as guest and received a valid JWT — but its role is guest, not admin
 ### Step 2 — Fetching the RSA public key
 Fetched the server's RSA public key — this is meant to verify RS256 signatures, but will be reused as an HS256 secret in the next step.
 
-<img width="566" height="177" alt="image" src="https://github.com/user-attachments/assets/82a112e2-f88e-4133-a41e-7e94e8fda65a" />
+<img width="541" height="173" alt="Screenshot 2026-07-05 163930" src="https://github.com/user-attachments/assets/d36eba6b-f7bc-40e0-9311-23f93d27049d" />
 
 The public key was saved locally to `pubkey.pemm` for use in the forging script.
 
-<img width="551" height="177" alt="image" src="https://github.com/user-attachments/assets/418c9ac7-edb6-4b41-8b76-035a4430ef03" />
+<img width="547" height="179" alt="Screenshot 2026-07-05 164536" src="https://github.com/user-attachments/assets/677045c0-859d-40d4-a0ad-b7a12b6a7f17" />
 
 
 ### Step 3 — Forging an admin token (algorithm confusion)
@@ -65,7 +65,9 @@ PyJWT wouldn't let me use the RSA key as an HMAC secret (it has a built-in check
 <img width="641" height="424" alt="image" src="https://github.com/user-attachments/assets/5b719b50-f9bb-4830-b026-54e6d1cfdb84" />
 
 I ran the script and it generated the forged token. I then stored it directly in a `TOKEN` variable so I could pass it to `curl` in the next step.
-<img width="936" height="198" alt="image" src="https://github.com/user-attachments/assets/feaedb6b-4f08-48a7-bb18-cadae640fa4d" />
+
+<img width="946" height="189" alt="Screenshot 2026-07-05 164907" src="https://github.com/user-attachments/assets/835793d6-062e-4cae-bbfa-d9079ec01411" />
+
 
 ### Result
 I sent the forged token to the vault endpoint, and the server responded with "vault unlocked" and the flag.
